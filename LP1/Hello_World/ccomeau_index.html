@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- set's standard character set to be rendered by the browser -->
+    <meta charset="UTF-8">
+    <title>Sample Page</title>
+  </head>
+  <body>
+
+    <!-- draws an empty canvas on the screen to be filled later -->
+    <canvas id="canvas" width="600" height="600">
+      <p>Sorry, your browser doesn't understand the canvas element.</p>
+    </canvas>
+    
+    <input type="button" value="Draw Pacman" onClick="drawCharacter();"/>
+
+    <!-- displays error if browser can't display javascript -->
+    <noscript>
+      Javascript cannot display. Make sure Javascript is enabled or use a different web browser.
+    </noscript>
+
+    <script src="js/pacman.js"></script>
+  </body>
+</html>

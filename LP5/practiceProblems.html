@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <button onclick="repeat()">I am awesome!</button>
+    <button onclick="palindrome()">Is your word a palindrome?</button>
+    <button onclick="sortNumbers()">Sort some numbers!</button>
+    <button onclick="letterGrade()">Calculate your grade!</button>
+    <script type="text/javascript">
+
+      function repeat(){
+        var string = "I am awesome.";
+        var repeatTimesP = prompt("How many times am I awesome?");
+        var repeatTimes = parseInt(repeatTimesP);
+        document.getElementById("demo").innerHTML = string.repeat(repeatTimes);
+
+      }
+
+      function palindrome(){
+        var word = prompt("What is your word?");
+        function reverseString(str){
+          splitString = str.split("");
+          reverseArray = splitString.reverse();
+          joinArray = reverseArray.join("");
+          return joinArray;
+        }
+        reverseString(word);
+        document.write(joinArray);
+
+        var button = document.createElement("button");
+        button.innerHTML = "Go back";
+
+        var body = document.getElementsByTagName("body")[0];
+        body.appendChild(button);
+
+        button.addEventListener ("click", function() {
+          back();
+        });
+
+        window.stop();
+      }
+
+      function sortNumbers(){
+
+        var num1p = prompt("What is the first number?", "0");
+        var num2p = prompt("what is the second number?", "0");
+        var num3p = prompt("what is the third number?", "0");
+
+        var num1 = parseInt(num1p);
+        var num2 = parseInt(num2p);
+        var num3 = parseInt(num3p);
+
+        if(num1 >= num2 && num1 <= num3){
+          document.write(num2 + " < " + num1 + " < " + num3);
+        }else if(num1 <= num2 && num1 >= num3){
+          document.write(num3 + " < " + num1 + " < " + num2);
+        }else if(num1 <= num2 && num1 <= num3){
+          if(num2 <= num3){
+            document.write(num1 + " < " + num2 + " < " + num3);
+          }else if(num2 >= num3){
+            document.write(num1 + " < " + num3 + " < " + num2);
+          }
+        }else if(num1 >= num2 && num1 >= num3){
+          if(num2 <= num3){
+            document.write(num2 + " < " + num3 + " < " + num1);
+          }else if(num2 >= num3){
+            document.write(num3 + " < " + num2 + " < " + num1);
+          }
+        }
+        var button = document.createElement("button");
+        button.innerHTML = "Go back";
+
+        var body = document.getElementsByTagName("body")[0];
+        body.appendChild(button);
+
+        button.addEventListener ("click", function() {
+          back();
+        });
+        window.stop();
+      }
+
+      function letterGrade(){
+        var letterGrade = "";
+        var percentP = prompt("What is your percent in the class?");
+
+        var percent = parseInt(percentP);
+
+        switch(true){
+          case(percent == 100):
+            letterGrade = "A+";
+            break;
+
+          case(percent >= 93 && percent <= 99.9):
+            letterGrade = "A";
+            break;
+
+          case(percent >= 90 && percent <= 92.9):
+            letterGrade = "A-";
+            break;
+
+          case(percent >= 87 && percent <= 89.9):
+            letterGrade = "B+";
+            break;
+
+          case(percent >= 83 && percent <= 86.9):
+            letterGrade = "B";
+            break;
+
+          case(percent >= 80 && percent <= 82.9):
+            letterGrade = "B-";
+            break;
+
+          case(percent >= 77 && percent <= 79.9):
+            letterGrade = "C+";
+            break;
+
+          case(percent >= 73 && percent <= 76.9):
+            letterGrade = "C";
+            break;
+
+          case(percent >= 70 && percent <= 72.9):
+            letterGrade = "C-";
+            break;
+
+          case(percent >= 69 && percent <= 69.9):
+            letterGrade = "D+";
+            break;
+
+          case(percent >= 68 && percent <= 68.9):
+            letterGrade = "D";
+            break;
+
+          case(percent >= 67 && percent <= 67.9):
+            letterGrade = "D-";
+            break;
+
+          case(percent <= 66.9):
+            letterGrade = "F";
+            break;
+        }
+        document.write("You have an " + letterGrade + " in this class.");
+        var button = document.createElement("button");
+        button.innerHTML = "Go back";
+
+        var body = document.getElementsByTagName("body")[0];
+        body.appendChild(button);
+
+        button.addEventListener ("click", function() {
+          back();
+        });
+        window.stop();
+      }
+
+      function back(){
+        window.history.back();
+      }
+    </script>
+    <p id="demo"></p>
+  </body>
+</html>

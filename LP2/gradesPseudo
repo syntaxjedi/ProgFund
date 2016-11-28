@@ -1,0 +1,122 @@
+BEGIN
+  initialize name to 0;
+  initialize grade to 0;
+  initialize highestGrade to 0;
+  initialize totalGrades to 0;
+  initialize gradeRunning to 0;
+  initialize gradeRunningTotal to 0;
+  initialize gradePercent to 0;
+  initialize gradeLetter to 0;
+  initialize gradeAverage to 0;
+
+  prompt name with "What is your name?";
+  //checks to see if a name was entered by checking against the default value
+  IF name == 0 THEN
+    prompt name with "A name is required for the program to run.";
+
+  prompt grade with "Please enter your assignment grade. *Must be entered as a whole integer*";
+  prompt highestGrade with "please enter highest grade amount for this assignment *Must be entered as a whole integer*";
+
+  //tries to catch an invalid grade before moving on with the rest of the program
+  IF grade < 0 || grade > 100 THEN
+    prompt grade with "Please enter a valid grade between 0 and 100";
+  ELSE IF highestGrade < 0 || highestGrade > 100 THEN
+    prompt highestGrade with "Please enter a valid grade between 0 and 100";
+  ENDIF
+
+  //asks user if there are any more assignments to be entered
+  prompt moreGrades with "Do you have more grades to enter? Yes/No";
+
+  IF moreGrades == Yes || moreGrades == yes || moreGrades == Y||moreGrades == y THEN
+    gradeRunning = gradeRunning + grade;
+    totalGrades = totalGrades + highestGrade;
+    goto line 15;
+  ELSE IF moreGrades == No || moreGrades == no || moreGrades == N|| moreGrades == n
+    gradeRunning = gradeRunning + grade;
+    totalGrades = totalGrades + highestGrade;
+    gradePercent = (gradeRunning / totalGrades) * 100;
+  ENDIF
+
+
+  //checks the letter grade against the percents given in the syllabus, download link:(https://edvance360.com/v7/file_download.php?id=1195455&size=48095&c=0152_101_PROG_FUND_Hybrid_Gago_Syllabus.docx)
+  IF gradePercent < 67 THEN
+    gradeLetter = F;
+  ELSE IF gradePercent >= 67 && grade < 68 THEN
+    gradeLetter = D-;
+  ELSE IF gradePercent >= 68 && grade < 69 THEN
+    gradeLetter = D;
+  ELSE IF gradePercent >= 69 && grade < 70 THEN
+    gradeLetter = D+;
+  ELSE IF gradePercent >= 70 && grade < 73 THEN
+    gradeLetter = C-;
+  ELSE IF gradePercent >= 73 && < 77 THEN
+    gradeLetter = C;
+  ELSE IF gradePercent >= 77 && < 80 THEN
+    gradeLetter = C+;
+  ELSE IF gradePercent >= 80 && < 83 THEN
+    gradeLetter = B-;
+  ELSE IF gradePercent >= 83 && < 87 THEN
+    gradeLetter = B;
+  ELSE IF gradePercent >= 87 && < 90 THEN
+    gradeLetter = B+;
+  ELSE IF gradePercent >= 90 && < 93 THEN
+    gradeLetter = A-;
+  ELSE IF gradePercent >= 93 && < 100 THEN
+    gradeLetter = A;
+  ELSE IF gradePercent >= 100;
+    gradeLetter = A+;
+  ENDIF
+
+  //Displays student name, grade, and percent
+  display "----Student Information----";
+  display "Student Name: " + name;
+  display "Student Grade: " + gradeLetter;
+  display "Student Average: " + gradePercent;
+
+END
+
+
+
+/* Program Output */
+
+What is your name? Casey
+Please enter your assignment grade. *Must be entered as a whole integer* 0
+grade = 0
+please enter highest grade amount for this assignment *Must be entered as a whole integer* 10
+highestGrade = 10
+Do you have more grades to enter? Yes/No Yes
+gradeRunning = 0
+totalGrades = 10
+Please enter your assignment grade. *Must be entered as a whole integer* 30
+grade = 30
+please enter highest grade amount for this assignment *Must be entered as a whole integer* 30
+highestGrade = 30
+Do you have more grades to enter? Yes/No Yes
+gradeRunning = 30
+totalGrades = 40
+Please enter your assignment grade. *Must be entered as a whole integer* 15
+grade = 15
+please enter highest grade amount for this assignment *Must be entered as a whole integer* 15
+highestGrade = 15
+Do you have more grades to enter? Yes/No Yes
+gradeRunning = 45
+totalGrades = 55
+Please enter your assignment grade. *Must be entered as a whole integer* 50
+grade = 50
+please enter highest grade amount for this assignment *Must be entered as a whole integer* 50
+highestGrade = 50
+Do you have more grades to enter? Yes/No Yes
+gradeRunning = 95
+totalGrades = 105
+Please enter your assignment grade. *Must be entered as a whole integer* 30
+grade = 30
+please enter highest grade amount for this assignment *Must be entered as a whole integer* 30
+highestGrade = 30
+Do you have more grades to enter? Yes/No No
+gradeRunning = 125
+totalGrades = 135
+gradePercent = 92.59
+----Student Information----
+Student Name: Casey
+Student Grade: A-
+Student Average: 92.59

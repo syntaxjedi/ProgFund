@@ -1,0 +1,53 @@
+//How to tie a shoe
+//main script
+
+load scene.Objects(objects);
+
+checkForObject(object.shoe, 'shoe');
+checkForObject(object.foot, 'foot');
+
+if(!shoe || !foot){
+  loadObject(scene.Objects, object.shoe, 'shoe');
+  loadObject(scene.Objects, object.foot, 'foot');
+}
+
+if(!shoe.isAttached('foot')){
+  object.Attach.shoe('foot');
+  object.shoe.setVariable(tied, false);
+}
+else if(shoe.isAttached('foot') && object.shoe.checkVariable(shoe.tied, true)){
+  print("You're already done");
+  exit;
+}
+
+
+
+//shoe script
+
+load scene.Objects(objects);
+
+checkForObject(object.shoe, 'shoe')
+
+bool tied = true;
+pos string1 = left;
+pos string2 = right;
+
+if(!shoe){
+  loadObject(scene.Objects, object.shoe, 'shoe');
+}
+
+if(tied = false){
+  object.step{
+    step.1(pickUp(string1, string2));
+    step.2(crossOver(string1, string2));
+    step.3(passUnder(string1, string2));
+    step.4(pullTight, makeLoopWith(string1), makeLoopWith(string2));
+    step.5(wrap(string2).around(string1).atPos(bottom));
+    step.6(pullTight)
+
+  }
+}
+else if(tied = true){
+  print("Congratulations, It's already tied!");
+  exit;
+}

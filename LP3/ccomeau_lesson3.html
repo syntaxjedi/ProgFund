@@ -1,0 +1,77 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UtF-8">
+  </head>
+  <body>
+    <script>
+      //Prompts user for name//
+      var name = prompt("What is your name?", "Your Name");
+      alert("Hello " + name);
+
+      //prompts for numbers//
+      alert("I will now round two numbers of your choosing!");
+      var promptNum1 = prompt("What is the first number?", "0");
+      var promptNum2 = prompt("What is the second number?", "0");
+
+      //converts string to number
+      var num1 = parseInt(promptNum1);
+      var num2 = parseInt(promptNum2);
+      //takes num1 to the power of num2 stores in sum
+      var sum = Math.pow(num1, num2);
+      document.write("The squared sum of " + name + "'s numbers is: " + sum.toFixed(2));
+
+      //height and radius of cone, i did this part in class before you decided on circle//
+      alert("Next, I will tell you the height and radius of a cone!");
+      var promptHeight = prompt("What is the height of the cone?", "0");
+      var promptRadius = prompt("What is the radius of the cone?", "0");
+      var height = parseInt(promptHeight);
+      var radius = parseInt(promptRadius);
+
+      var vol = Math.PI * Math.pow(radius,2) * (height/3);
+      var area = Math.PI * radius * (radius + Math.sqrt(Math.pow(height, 2) + Math.pow(radius, 2)));
+      console.log(area);
+
+      document.write("<br>The volume of " + name + "'s cone is: "  + vol.toFixed(2));
+      document.write("<br>The area of " + name + "'s cone is: " + area.toFixed(2));
+
+      //time until christmas//
+      alert("And finally, your results. *Plus the number of days until christmas :)")
+
+      //one day in milliseconds
+      var oneDay=1000*60*60*24
+      var today = new Date();
+
+      //get's current year, clock will reset every year automatically
+      var currentYear = new Date().getFullYear();
+      var christmas = new Date(currentYear, 11, 25);
+      var timeTo = christmas - today;
+
+      //converts the difference between today and christmas from milliseconds to days
+      var days = Math.round(timeTo / oneDay);
+
+      document.write("<br>Days until christmas: " + days);
+
+    </script>
+    <pre>
+             |\ 0 /|
+              |/|\|
+                @
+               /+\
+              o/@\\
+            +//o/\\o
+            //+/@\\/+o
+           /\/o//+/\\\\
+          +///\//\o\o+\\o
+         o/+@/++/\\\@\\/\+
+        /\/+///o/@\o+/\+\\
+       o/+/\/@//||\/\\o\\\o
+        /__ /|  ||      /__ /|
+       | * | | (__)___ | * | |
+       |___|/_   /__ /||___|/
+           /_/| | * | |
+          |_|/  |___|/
+    </pre>
+  </body>
+
+</html>

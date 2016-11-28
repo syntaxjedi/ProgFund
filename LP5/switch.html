@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      // Returns a letter grade from a percentage.
+      function getLetterGrade(percentage)
+      {
+        var letterGrade = "";
+
+        // 1. The switch expression evaluates to true
+        switch (true)
+        {
+          // 2. Now find the first case that evaluates to true
+          case (percentage >= 90):
+            letterGrade = "A";
+            break;
+
+          // 3. Now write the rest of the case statements
+        }
+
+        return letterGrade;
+      }
+
+      var testGrade = 95; // A sample test grade
+      var testLetterGrade = getLetterGrade(testGrade);  // Verify the getLetterGrade function works
+
+      // Output letter grade to the screen
+      document.write("Test Grade = " + testLetterGrade + " (" + testGrade + ")");
+    </script>
+  </body>
+</html>

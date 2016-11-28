@@ -1,0 +1,30 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script type="text/javascript">
+      <!--
+
+        //program to convert fahrenheit to celsius
+
+        //prompt only outputs string
+        var promptF = window.prompt("What is the temperature in Fahrenheit?", "0");
+        var tempC = 0;
+        //converts string to integer, needed for maths below
+        var tempF = parseInt(promptF);
+
+        //celsius = fahrenheit - 32 / 1.8
+        tempC = (tempF - 32) / 1.8;
+
+        document.write("The temperature in Fahrenheit is: " + tempF.toFixed(2) + "°");
+        document.write("<br>The temperature in Celsius is: " + tempC.toFixed(2) + "°");
+
+      //-->
+    </script>
+    <noscript>
+      Please enable javascript or use a different browser.
+    </noscript>
+  </body>
+</html>

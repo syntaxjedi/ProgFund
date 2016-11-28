@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <script>
+      /*
+      This is a simple tip calculator in JavaScript.
+      It doesn't handle non-numeric characters yet
+      and doesn't handle rounding, but it's a start.
+      */
+
+      // Variable declarations, in alphabetical order
+      var billAmount;
+      var tipAmount;
+      var totalAmount;
+
+      // Input
+      billAmount = prompt("Enter the bill amount please.");
+
+      // Processing
+
+      /*
+      Data coming in from users in JavaScript is character
+      data. It is not numeric data. Before we can do math
+      on it, we must convert it to a number. JavaScript's
+      Number() function does this.
+      */
+      billAmount = Number(billAmount);
+
+      // Calculate the tip amount
+      tipAmount = billAmount * 0.15;
+
+      // Calculate the total
+      totalAmount = billAmount + tipAmount;
+
+      // Output section
+      document.write("<p>Bill: " + billAmount + "</p>");
+      document.write("<p>Tip: " + tipAmount + "</p>");
+      document.write("<p>Total: " + totalAmount + "</p>");
+    </script>
+  </body>
+</html>

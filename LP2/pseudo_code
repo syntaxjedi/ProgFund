@@ -1,0 +1,22 @@
+BEGIN
+
+  initialize studentName to "Casey";
+  initialize studentLGrade to "A";
+  initialize studentPGrade to "100";
+
+  initialize result to "0";
+  initialize length to "0";
+
+  initialize widht to "0";
+  initialize area to "0";
+
+  result = 229;
+
+  prompt length with "What is the length of the room?";
+  prompt width with "What is the width of the room?";
+
+  area = length * width;
+
+  display "The area of the room is:" + area;
+
+END

@@ -1,0 +1,110 @@
+Casey Comeau, Sebastion
+
+BEGIN
+  initialize firstNumber to 0;
+  initialize secondNumber to 0;
+  initialize thirdNumber to 0;
+
+  prompt firstNumber with "What is the first number?";
+  prompt secondNumber with "What is the second number?";
+  prompt thirdNumber with "What is the third number?";
+
+  IF firstNumber > secondNumber && firstNumber > thirdNumber THEN
+
+    IF secondNumber > thirdNumber THEN
+      display "The numbers from smallest to largest are:" + thirdNumber + secondNumber + firstNumber;
+
+    ELSEIF secondNumber < thirdNumber THEN
+      display "The numbers from smallest to largest are:" + secondNumber + thirdNumber + firstNumber;
+
+  ELSEIF firstNumber < secondNumber && firstNumber > thirdNumber THEN
+
+    IF secondNumber > thirdNumber THEN
+      display "The numbers from smallest to largest are:" + thirdNumber + firstNumber + secondNumber;
+
+    ELSEIF secondNumber < thirdNumber THEN
+      display "The numbers from smallest to largest are:" + firstNumber + secondNumber + secondNumber;
+
+  ELSEIF firstNumber < secondNumber && firstNumber < thirdNumber THEN
+
+    IF secondNumber < thirdNumber THEN
+      display "The numbers from smallest to largest are:" + firstNumber + secondNumber + thirdNumber;
+
+    ELSEIF secondNumber > thirdNumber THEN
+      display "The numbers from smallest to largest are:" + firstNumber + thirdNumber + firstNumber;
+
+  ELSEIF firstNumber == secondNumber || firstNumber == thirdNumber THEN
+
+    IF firstNumber > thirdNumber THEN
+      display "The numbers from smallest to largest are:" + thirdNumber + secondNumber + firstNumber;
+
+    ELSEIF firstNumber < thirdNumber THEN
+      display "The numbers from smallest to largest are:" + firstNumber + secondNumber + thirdNumber;
+  ELSEIF secondNumber == thirdNumber THEN
+
+    IF firstNumber > secondNumber THEN
+      display "The numbers from smallest to largest are:" + secondNumber + thirdNumber + firstNumber;
+
+    ELSE
+      display "The numbers from smallest to largest are:" + firstNumber + secondNumber + thirdNumber;
+  ELSE
+    display "Your numbers are invalid!" + firstNumber + secondNumber + thirdNumber;
+  ENDIF
+
+  LOOP starting at 0 up to 100
+    count = count + 1;
+    display count;
+  ENDLOOP
+END
+
+BEGIN
+  initialize numOne to 0;
+  initialize numTwo to 0;
+  initialize count to 0;
+
+  prompt numOne with "What is the first number?";
+  prompt numTwo with "What is the second number?";
+
+  count = numOne to the power of numTwo;
+
+  display count;
+END
+
+BEGIN
+  initialize numOne to 0;
+  initialize numTwo to 0;
+  initialize numThree to 0;
+  initialize numFour to 0;
+  initialize numFive to 0;
+  initialize count to 0;
+
+  prompt numOne with "What is the first number?";
+  prompt numOne with "What is the second number?";
+  prompt numOne with "What is the third number?";
+  prompt numOne with "What is the fourth number?";
+  prompt numOne with "What is the fifth number?";
+
+  count = (numOne + numTwo + numThree + numFour + numFive) / 5;
+
+  display "The average is: " + count;
+END
+
+BEGIN
+  count = 0;
+
+  LOOP starting at 0 ending at 100;
+    count = count + 5;
+    display count;
+  ENDLOOP
+  
+END
+
+               *
+               |
+            {. _ .} <[bleep, bloop, pseudocode sucks]
+               |
+            ---|---
+               |
+              / \
+             |   |
+             |   |
